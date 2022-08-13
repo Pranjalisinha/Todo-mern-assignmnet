@@ -9,7 +9,7 @@ const LoginPage = () => {
     const Navigate=useNavigate();
 
     const [data,setdata]=useState({
-        "email":"",
+        "username":"",
         "password":""
       })
 
@@ -19,7 +19,7 @@ const LoginPage = () => {
           localStorage.setItem("authorization",loginData.data.Authtoken) 
           // console.log(localStorage.getItem("authorization"))
         
-          localStorage.setItem("Username", loginData.data.username)
+          localStorage.setItem("username", loginData.data.username)
         
         Navigate("/Todo")
         })
