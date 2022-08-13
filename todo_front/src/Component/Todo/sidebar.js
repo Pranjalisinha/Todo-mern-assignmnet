@@ -13,7 +13,7 @@ const Sidebar =()=>{
         if(Authtoken){
             axios({
                 method:'GET',
-                url:'http://localhost:3001/add/todo',
+                url:'https://todo-server-a.herokuapp.com/add/todo',
                 headers:{
                     authorization:Authtoken
                 }

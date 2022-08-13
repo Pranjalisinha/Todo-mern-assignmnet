@@ -10,7 +10,7 @@ const RegisterPage = () =>{
 
     const handleRegister =(e)=>{
         e.preventDefault()
-      axios.post("http://localhost:3001/user/register",data)
+      axios.post("https://todo-server-a.herokuapp.com/user/register",data)
           .then(()=>{Navigate("/Login")})
         .catch((err)=>{
             console.log(err)
