@@ -38,20 +38,23 @@ router.post("/register",async(req,res)=>{
 
 
     router.post("/login", (req, res)=> {
-        register_model.find({email: req.body.email}).then((userData)=> {
-            if(userData.length) {
-                bcrypt.compare(req.body.password, userData[0].password).then((val)=> {
-                    if(val) {
-                        const authToken = jwt.sign(userData[0].email, process.env.SECRET_KEY);
-                        res.status(200).send({authToken});
-                    } else {
-                        res.status(400).send("Invalid Password");
-                    }
-                })
-            } else {
-                res.status(400).send("Unauthorized user");
-            }
-        })
+      const signindata= await register_model.find({email:req.body.email})
+      // console.log(signindata)
+         if(signindata.length){
+           const data= await bcrypt.compare(req.body.password,signindata[0].password)
+             if(data){
+              //generating token
+                 const Authtoken=jwt.sign(signindata[0].email,process.env.SECRET_KEY)
+                 const username = signindata[0].username
+                 res.status(200).send({Authtoken: Authtoken, username: username})
+              }
+              else{
+                 res.status(400).send("Invalid password")
+              }
+          }
+          else{
+            res.status(400).send(`Invalid User`)
+          }
     });
     
     router.get("/data",(req,res)=>{
