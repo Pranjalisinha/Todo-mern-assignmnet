@@ -37,7 +37,7 @@ router.post("/register",async(req,res)=>{
     })
 
 
-    router.post("/login", (req, res)=> {
+    router.post("/login", async(req, res)=> {
       const signindata= await register_model.find({email:req.body.email})
       // console.log(signindata)
          if(signindata.length){
