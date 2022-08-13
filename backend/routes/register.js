@@ -54,7 +54,7 @@ router.post("/register",async(req,res)=>{
         })
     });
     
-    router.get("/user",(req,res)=>{
+    router.get("/data",(req,res)=>{
       try {
         const user = jwt.verify(req.headers.authorization, process.env.SECRET_KEY );
         register_model.find({email : user}).then((data)=>{
