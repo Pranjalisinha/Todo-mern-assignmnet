@@ -13,12 +13,13 @@ const TodoTable = () =>{
     }
     console.log(start);
     console.log(end);
-    const starHandle = () =>{
+    const starHandle = (e) =>{
+        e.preventDefault();1-
         setStart(false);
-        
-        if(!start){
-            setEnd(true)
-        }
+    }
+    console.log(start);
+    if(!start){
+        setEnd(true)
     }
     
     return(
@@ -42,7 +43,7 @@ const TodoTable = () =>{
                         <td style={{height: "50px"}}>Cooking</td>
                         <td> </td>
                         <td> </td>
-                        <td>{start ? <button className="startbtn" onClick={()=>{starHandle()}}>Start</button> : <button className="startbtn2">End <div style={{color: "orange"}}>pause</div></button> }</td>
+                        <td>{start ? <button className="startbtn" onClick={()=>{starHandle(e)}}>Start</button> : <button className="startbtn2">End <div style={{color: "orange"}}>pause</div></button> }</td>
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Drinking</td>
