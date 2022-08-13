@@ -6,17 +6,22 @@ const TodoTable = () =>{
 
       const Authtoken=localStorage.getItem("authorization");
     const userName = localStorage.getItem("Username");
-    const [start, setStart] = useState(false)
+    const [start, setStart] = useState(true)
+    const [end , setEnd] = useState(false)
 
     const NewActivityadd =()=>{
 
     }
-    const starHandle =() =>{
-        setStart(true);
-        if(start){
-            <td style={{color: "red"}}>End <div>Pause</div></td>
+    console.log(start);
+    console.log(end);
+    const starHandle = () =>{
+        setStart(false);
+        
+        if(!start){
+            setEnd(true)
         }
     }
+    
     return(
         <>
         <div className="container">
@@ -38,7 +43,7 @@ const TodoTable = () =>{
                         <td style={{height: "50px"}}>Cooking</td>
                         <td> </td>
                         <td> </td>
-                        <td><button className="startbtn" onClick={()=>{starHandle()}}>Start</button></td>
+                        <td>{start ? <button className="startbtn" onClick={()=>{starHandle()}}>Start</button> : <button className="startbtn2">End <div style={{color: "orange"}}>pause</div></button> }</td>
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Drinking</td>

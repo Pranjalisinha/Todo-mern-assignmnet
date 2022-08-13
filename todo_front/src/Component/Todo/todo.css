@@ -48,3 +48,9 @@
     border: none;
     background-color: #ffffff;
 }
+.startbtn2{
+    display: inline;
+    border: none;
+    background-color: #ffffff;
+    color: red;
+}
