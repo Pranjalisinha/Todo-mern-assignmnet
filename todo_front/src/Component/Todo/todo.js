@@ -14,7 +14,7 @@ const TodoTable = () =>{
     console.log(start);
     console.log(end);
     const starHandle = (e) =>{
-        e.preventDefault();1-
+        e.preventDefault();
         setStart(false);
     }
     console.log(start);
@@ -41,37 +41,37 @@ const TodoTable = () =>{
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Cooking</td>
-                        <td> </td>
+                        <td>Pending </td>
                         <td> </td>
                         <td>{start ? <button className="startbtn" onClick={()=>{starHandle(e)}}>Start</button> : <button className="startbtn2">End <div style={{color: "orange"}}>pause</div></button> }</td>
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Drinking</td>
-                        <td> </td>
+                        <td>Pending  </td>
                         <td> </td>
                         <td><button className="startbtn" onClick={()=>{starHandle()}}>Start</button></td>
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Sleeping</td>
-                        <td> </td>
+                        <td>Pending  </td>
                         <td> </td>
                         <td><button className="startbtn" onClick={()=>{starHandle()}}>Start</button></td>
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Running</td>
-                        <td> </td>
+                        <td>Pending  </td>
                         <td> </td>
                         <td><button className="startbtn" onClick={()=>{starHandle()}}>Start</button></td>
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Eating</td>
-                        <td> </td>
+                        <td> Pending </td>
                         <td> </td>
                         <td><button className="startbtn" onClick={()=>{starHandle()}}>Start</button></td>
                     </tr>
                     <tr>
                         <td style={{height: "50px"}}>Washing</td>
-                        <td> </td>
+                        <td>Pending  </td>
                         <td> </td>
                         <td><button className="startbtn" onClick={()=>{starHandle()}}>Start</button></td>
                     </tr>
